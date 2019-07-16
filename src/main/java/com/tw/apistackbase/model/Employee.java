@@ -14,11 +14,6 @@ public class Employee {
         List<Employee> employees=new ArrayList<>();
         employees.add(new Employee(1,"xiaoming",22,"male",5000));
         employees.add(new Employee(2,"xiaohong",24,"female",6000));
-        employees.add(new Employee(3,"xiaohong",24,"female",6000));
-        employees.add(new Employee(4,"xiaohong",24,"female",6000));
-        employees.add(new Employee(5,"xiaohong",24,"female",6000));
-        employees.add(new Employee(6,"xiaohong",24,"female",6000));
-        employees.add(new Employee(7,"xiaohong",24,"female",6000));
         return employees;
     }
 
