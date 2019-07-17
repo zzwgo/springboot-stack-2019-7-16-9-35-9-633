@@ -21,6 +21,37 @@ public class CompanyControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Test
+    public  void should_return_except_list_when_get_company_1() throws Exception {
+        mockMvc.perform(
+                get("/companies/{id}","1")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json("{\n" +
+                        "    \"id\": 1,\n" +
+                        "    \"companyName\": \"thoughtworks\",\n" +
+                        "    \"employeeNumber\": 2,\n" +
+                        "    \"employees\": [\n" +
+                        "        {\n" +
+                        "            \"id\": 1,\n" +
+                        "            \"name\": \"小明\",\n" +
+                        "            \"age\": 10,\n" +
+                        "            \"gender\": \"male\",\n" +
+                        "            \"salary\": 6000\n" +
+                        "        },\n" +
+                        "        {\n" +
+                        "            \"id\": 2,\n" +
+                        "            \"name\": \"小红\",\n" +
+                        "            \"age\": 20,\n" +
+                        "            \"gender\": \"female\",\n" +
+                        "            \"salary\": 6000\n" +
+                        "        }\n" +
+                        "    ]\n" +
+                        "}"));
+    }
+
     @Test
     public  void should_return_except_list_when_litmit_page_and_pageSize() throws Exception {
         mockMvc.perform(
