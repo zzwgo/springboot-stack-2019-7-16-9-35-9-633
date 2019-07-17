@@ -40,9 +40,9 @@ public class EmployeeController {
         return pageList;
     }
 
-    @GetMapping(value = "", params = {"salary"})
-    public List<Employee> getSpeSalarycEmployee(@RequestParam(required = true) String salary){
-        return createTestEmployees().stream().filter(it->it.getGender().equals(salary)).collect(Collectors.toList());
+    @GetMapping(value = "", params = {"gender"})
+    public List<Employee> getSpeSalarycEmployee(@RequestParam String gender){
+        return createTestEmployees().stream().filter(it->it.getGender().equals(gender)).collect(Collectors.toList());
     }
 
     @PostMapping
