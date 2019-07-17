@@ -21,31 +21,5 @@ public class CompanyControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public  void should_return_except_list_when_change_name_which_id_is_1() throws Exception {
-        mockMvc.perform(
-                put("/employees")
-                        .content("{\n" +
-                                "\t\"id\":1,\n" +
-                                "\t\"name\":\"xiaaaaaaaaaaaaaaaa\",\n" +
-                                "\t\"age\":22,\n" +
-                                "\t\"gender\":\"girl\"\n" +
-                                "}").contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().json("[\n" +
-                        "    {\n" +
-                        "        \"id\": 2,\n" +
-                        "        \"name\": \"xiaohong\",\n" +
-                        "        \"age\": 24,\n" +
-                        "        \"gender\": \"girl\"\n" +
-                        "    },\n" +
-                        "    {\n" +
-                        "        \"id\": 1,\n" +
-                        "        \"name\": \"xiaaaaaaaaaaaaaaaa\",\n" +
-                        "        \"age\": 22,\n" +
-                        "        \"gender\": \"girl\"\n" +
-                        "    }\n" +
-                        "]"));
-    }
+
 }
